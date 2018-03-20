@@ -1,6 +1,7 @@
 import { SELECT_WEAPON, CALCULATE_RESULT, RESET_GAME } from '../../actions/game';
 import { SELECTION, COUNTDOWN, RESULT } from '../../constants/gameState';
 import { pickRandomWeapon } from '../../utils/weapon';
+import { calculateResult } from '../../utils/result';
 
 const initialState = {
   gameState: SELECTION,
@@ -23,7 +24,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         gameState: RESULT,
-        results: [...state.results] // TODO Append result to array here
+        results: [...state.results, calculateResult(state.userWeapon, state.cpuWeapon)]
       };
 
     case RESET_GAME:
