@@ -4,8 +4,14 @@ import {
   RESET_GAME
 } from '../../actions/game';
 
+import {
+  SELECTION,
+  COUNTDOWN,
+  RESULT
+} from '../../constants/gameState';
+
 const initialState = {
-  gameState: null, // TODO SELECT_WEAPON | COUNTDOWN | RESULT
+  gameState: SELECTION,
   userWeapon: null,
   cpuWeapon: null,
   results: []
@@ -16,7 +22,7 @@ export default (state = initialState, action) => {
     case SELECT_WEAPON:
       return {
         ...state,
-        gameState: null, // TODO COUNTDOWN
+        gameState: COUNTDOWN,
         userWeapon: action.data.weapon,
         cpuWeapon: null // TODO Pick random weapon here
       };
@@ -24,14 +30,14 @@ export default (state = initialState, action) => {
     case CALCULATE_RESULT:
       return {
         ...state,
-        gameState: null, // TODO RESULT
+        gameState: RESULT,
         results: [...state.results] // TODO Append result to array here
       };
 
     case RESET_GAME:
       return {
         ...state,
-        gameState: null, // TODO SELECT_WEAPON
+        gameState: SELECTION,
         userWeapon: null,
         cpuWeapon: null
       };

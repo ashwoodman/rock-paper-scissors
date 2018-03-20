@@ -4,7 +4,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <span>{this.props.test}</span>
+        <span>{this.props.temp}</span>
       </div>
     );
   }
