@@ -35,4 +35,24 @@ describe('game reducer', () => {
     const newState = reducer({ ...state, userWeapon: ROCK, cpuWeapon: SCISSORS }, calculateResult());
     expect(newState.results[0]).toBe(WIN);
   });
+
+  it('should move game state to result when calculating result', () => {
+    const newState = reducer({ ...state, userWeapon: ROCK, cpuWeapon: SCISSORS }, calculateResult());
+    expect(newState.gameState).toBe(RESULT);
+  });
+
+  it('should reset user weapon when resetting game', () => {
+    const newState = reducer({ ...state, userWeapon: ROCK }, resetGame());
+    expect(newState.userWeapon).toBeNull();
+  });
+
+  it('should reset cpu weapon when resetting game', () => {
+    const newState = reducer({ ...state, cpuWeapon: ROCK }, resetGame());
+    expect(newState.cpuWeapon).toBeNull();
+  });
+
+  it('should move game state to selection when resetting game', () => {
+    const newState = reducer(state, resetGame());
+    expect(newState.gameState).toBe(SELECTION);
+  });
 });
