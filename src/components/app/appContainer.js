@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import App from './app';
 
 const mapStateToProps = (state) => ({
-  temp: state.gameState
+  gameState: state.gameState
 });
 
 const mapDispatchToProps = (dispatch) => ({
