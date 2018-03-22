@@ -13,7 +13,7 @@ import './app.css';
 class App extends Component {
   renderUserComponent = () => {
     if (this.props.gameState === SELECTION) {
-      return <WeaponMenu />;
+      return <WeaponMenu handleSelectWeapon={this.props.handleSelectWeapon} />;
     }
     return <Weapon />;
   }
