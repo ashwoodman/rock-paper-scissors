@@ -8,6 +8,8 @@ import ResultDisplay from '../resultDisplay/resultDisplay';
 
 import { SELECTION, COUNTDOWN, RESULT } from '../../constants/gameState';
 
+import './app.css';
+
 class App extends Component {
   renderUserComponent = () => {
     if (this.props.gameState === SELECTION) {

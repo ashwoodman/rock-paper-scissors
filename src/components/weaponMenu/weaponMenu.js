@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { ROCK, PAPER, SCISSORS } from '../../constants/weaponTypes';
 import { getImageSrc } from '../../utils/weapon';
 
+import './weaponMenu.css';
+
 export default (props) => (
   <div class="weapon-menu">
     <a

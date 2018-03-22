@@ -1,0 +1,8 @@
+.weapon--reveal {
+  text-align: right;
+}
+
+.weapon__image {
+  width: 80%;
+  max-width: 200px;
+}
