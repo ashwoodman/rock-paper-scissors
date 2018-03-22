@@ -6,7 +6,7 @@ import SelectText from '../selectText/selectText';
 import Countdown from '../countdown/countdown';
 import ResultDisplay from '../resultDisplay/resultDisplay';
 
-import { SELECTION, COUNTDOWN, RESULT } from '../../constants/gameState';
+import { SELECTION, COUNTDOWN } from '../../constants/gameState';
 
 import './app.css';
 
@@ -15,7 +15,7 @@ class App extends Component {
     if (this.props.gameState === SELECTION) {
       return <WeaponMenu handleSelectWeapon={this.props.handleSelectWeapon} />;
     }
-    return <Weapon />;
+    return <Weapon gameState={this.props.gameState} weapon={this.props.userWeapon} />;
   }
 
   renderMiddleComponent = () => {
@@ -25,7 +25,7 @@ class App extends Component {
     if (this.props.gameState === COUNTDOWN) {
       return <Countdown showResult={this.props.showResult} />;
     }
-    return <ResultDisplay />;
+    return <ResultDisplay lastResult={this.props.lastResult} handleReset={this.props.handleReset} />;
   } 
 
   render() {
@@ -45,12 +45,12 @@ class App extends Component {
           </div>
 
           <div className="player player--cpu">
-            <Weapon />
+            <Weapon gameState={this.props.gameState} weapon={this.props.cpuWeapon} />
           </div>
         </div>
         
         <div className="footer">
-          <span>Wins: TODO, Draws: TODO, Losses: TODO</span>
+          <span>Wins: {this.props.winCount}, Draws: {this.props.drawCount}, Losses: {this.props.loseCount}</span>
         </div>
       </div>
     );

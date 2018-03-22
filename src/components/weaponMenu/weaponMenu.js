@@ -4,28 +4,38 @@ import { getImageSrc } from '../../utils/weapon';
 
 import './weaponMenu.css';
 
-export default (props) => (
-  <div class="weapon-menu">
-    <a
-      href
-      class="weapon-menu__option"
-      onClick={() => props.handleSelectWeapon(ROCK)}
-    >
-      <img class="weapon-menu__image" src={getImageSrc(ROCK)} alt="rock" />
-    </a>
-    <a
-      href
-      class="weapon-menu__option"
-      onClick={() => props.handleSelectWeapon(PAPER)}
-    >
-      <img class="weapon-menu__image" src={getImageSrc(PAPER)} alt="paper" />
-    </a>
-    <a
-      href
-      class="weapon-menu__option"
-      onClick={() => props.handleSelectWeapon(SCISSORS)}
-    >
-      <img class="weapon-menu__image" src={getImageSrc(SCISSORS)} alt="scissors" />
-    </a>
-  </div>
-);
+export default class WeaponMenu extends Component {
+
+  handleSelectWeapon = (event, weapon) => {
+    event.preventDefault();
+    this.props.handleSelectWeapon(weapon);
+  }
+
+  render() {
+    return (
+      <div className="weapon-menu">
+        <a
+          href="#"
+          className="weapon-menu__option"
+          onClick={(event) => this.handleSelectWeapon(event, ROCK)}
+        >
+          <img className="weapon-menu__image" src={getImageSrc(ROCK)} alt="rock" />
+        </a>
+        <a
+          href="#"
+          className="weapon-menu__option"
+          onClick={(event) => this.handleSelectWeapon(event, PAPER)}
+        >
+          <img className="weapon-menu__image" src={getImageSrc(PAPER)} alt="paper" />
+        </a>
+        <a
+          href="#"
+          className="weapon-menu__option"
+          onClick={(event) => this.handleSelectWeapon(event, SCISSORS)}
+        >
+          <img className="weapon-menu__image" src={getImageSrc(SCISSORS)} alt="scissors" />
+        </a>
+      </div>
+    );
+  }
+}

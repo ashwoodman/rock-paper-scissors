@@ -15,7 +15,7 @@ export default (props) => {
 
   return (
     <div className={`weapon ${weaponClass}`}>
-      <img src={imageSrc} alt className="weapon__image"/>
+      <img src={imageSrc} alt={weapon.toLowerCase()} className="weapon__image"/>
     </div>
   );
 }
