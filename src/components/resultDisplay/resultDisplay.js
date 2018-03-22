@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { WIN, LOSE } from '../../constants/results';
 
 import './resultDisplay.css';
 
 export default class ResultDisplay extends Component {
+  static propTypes = {
+    handleReset: PropTypes.func.isRequired,
+    lastResult: PropTypes.string.isRequired
+  }
+
   handleReset = (event) => {
     event.preventDefault();
     this.props.handleReset();

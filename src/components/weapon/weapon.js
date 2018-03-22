@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { getImageSrc } from '../../utils/weapon';
 import { ROCK } from '../../constants/weaponTypes';
@@ -6,16 +7,23 @@ import { COUNTDOWN, RESULT } from '../../constants/gameState';
 
 import './weapon.css';
 
-export default (props) => {
-  const weapon = props.gameState !== RESULT ? ROCK : props.weapon;
-  const imageSrc = getImageSrc(weapon);
+export default class Weapon extends Component {
+  static propTypes = {
+    gameState: PropTypes.string.isRequired,
+    weapon: PropTypes.string.isRequired
+  }
 
-  const weaponClass = props.gameState !== RESULT ? 'weapon--hide' : 'weapon--reveal';
-  const weaponImageClass = props.gameState === COUNTDOWN ? 'weapon__image--animate' : '';
+  render() {
+    const weapon = this.props.gameState !== RESULT ? ROCK : this.props.weapon;
+    const imageSrc = getImageSrc(weapon);
 
-  return (
-    <div className={`weapon ${weaponClass}`}>
-      <img src={imageSrc} alt={weapon.toLowerCase()} className={`weapon__image ${weaponImageClass}`}/>
-    </div>
-  );
+    const weaponClass = this.props.gameState !== RESULT ? 'weapon--hide' : 'weapon--reveal';
+    const weaponImageClass = this.props.gameState === COUNTDOWN ? 'weapon__image--animate' : '';
+
+    return (
+      <div className={`weapon ${weaponClass}`}>
+        <img src={imageSrc} alt={weapon.toLowerCase()} className={`weapon__image ${weaponImageClass}`}/>
+      </div>
+    );
+  }
 }

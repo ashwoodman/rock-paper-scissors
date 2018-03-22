@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { ROCK, PAPER, SCISSORS } from '../../constants/weaponTypes';
 import { getImageSrc } from '../../utils/weapon';
 
 import './weaponMenu.css';
 
 export default class WeaponMenu extends Component {
+  static propTypes = {
+    handleSelectWeapon: PropTypes.func.isRequired
+  }
 
   handleSelectWeapon = (event, weapon) => {
     event.preventDefault();

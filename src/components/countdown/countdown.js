@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Countdown extends Component {
+  static propTypes = {
+    showResult: PropTypes.func.isRequired
+  }
+
   state = {
     count: 3
   }
