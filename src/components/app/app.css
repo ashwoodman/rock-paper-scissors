@@ -32,6 +32,12 @@
   font-size: 40px;
 }
 
+@media (max-width: 600px) {
+  .middle {
+    font-size: 26px;
+  }
+}
+
 .footer {
   display: flex;
   flex-direction: row;
