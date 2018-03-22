@@ -15,3 +15,4 @@ https://build-czwyumrhzn.now.sh/
 ## Known Issues
 
 - Countdown hand animation sometimes freezes on Safari
+- Weapon menu items off screen for small wide screens
