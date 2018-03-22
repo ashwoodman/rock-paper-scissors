@@ -7,11 +7,6 @@
   max-width: 200px;
 }
 
-.weapon__image--animate {
-  text-align: left;
-  animation: bounce 0.7s ease-out infinite;
-}
-
 @keyframes bounce {
   0% {
     transform: translateY(0);
@@ -22,4 +17,9 @@
   100% {
     transform: translateY(0);
   }
+}
+
+.weapon__image--animate {
+  text-align: left;
+  animation: bounce 0.7s ease-in-out infinite;
 }
