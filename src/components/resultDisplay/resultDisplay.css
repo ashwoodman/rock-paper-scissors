@@ -1,0 +1,18 @@
+.result__message {
+  display: block;
+}
+
+.result__reset {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 24px;
+  color: #FFFFFF;
+  background-color: #555555;  
+}
+
+.result__reset:hover {
+  background-color: #333333;
+}

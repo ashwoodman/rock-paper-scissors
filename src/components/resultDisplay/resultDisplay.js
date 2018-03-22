@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { WIN, LOSE } from '../../constants/results';
 
+import './resultDisplay.css';
+
 export default class ResultDisplay extends Component {
   handleReset = (event) => {
     event.preventDefault();
@@ -15,8 +17,8 @@ export default class ResultDisplay extends Component {
 
     return (
       <div>
-        <span>{message}</span>
-        <a href="#" className="reset-button" onClick={this.handleReset}>
+        <span className="result__message">{message}</span>
+        <a href="#" className="result__reset" onClick={this.handleReset}>
           Play again
         </a>
       </div>

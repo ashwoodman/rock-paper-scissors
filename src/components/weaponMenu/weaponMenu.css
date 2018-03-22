@@ -3,15 +3,21 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: left;
   justify-content: center;
-  margin: 30px;
 }
 
 .weapon-menu__option {
   flex: 1;
   display: block;
-  max-height: 140px;
-  margin: 10px;
+  max-height: 200px;
+  margin: 10px 0;
+  width: 80%;
+}
+
+.weapon-menu__option:hover {
+  background-color: #D7D7D7;
+  border-radius: 4px;
 }
 
 .weapon-menu__image {
