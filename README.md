@@ -8,6 +8,10 @@ Created using React and Redux.
 2. Run `npm install`
 3. Run `npm start`
 
-## Demo
+## Live Demo
 
-TODO: now.sh
+https://build-gzccxjzdao.now.sh/
+
+## Known Issues
+
+- Countdown hand animation sometimes freezes on Safari
