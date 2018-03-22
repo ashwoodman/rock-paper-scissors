@@ -10,7 +10,7 @@ Created using React and Redux.
 
 ## Live Demo
 
-https://build-gzccxjzdao.now.sh/
+https://build-czwyumrhzn.now.sh/
 
 ## Known Issues
 
