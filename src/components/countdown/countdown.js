@@ -14,7 +14,7 @@ export default class Countdown extends Component {
       this.setState({
         count: this.state.count - 1
       });
-    }, 1000);
+    }, 700);
 
     return (
       <div>
