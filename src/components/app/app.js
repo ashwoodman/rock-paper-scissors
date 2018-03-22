@@ -23,7 +23,7 @@ class App extends Component {
       return <SelectText />;
     }
     if (this.props.gameState === COUNTDOWN) {
-      return <Countdown />;
+      return <Countdown showResult={this.props.showResult} />;
     }
     return <ResultDisplay />;
   } 

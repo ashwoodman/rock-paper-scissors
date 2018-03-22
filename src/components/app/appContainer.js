@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import App from './app';
 
-import { selectWeapon } from '../../actions/game';
+import { selectWeapon, calculateResult } from '../../actions/game';
 
 const mapStateToProps = (state) => ({
   gameState: state.gameState
@@ -10,6 +10,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   handleSelectWeapon(weapon) {
     dispatch(selectWeapon(weapon));
+  },
+  showResult() {
+    dispatch(calculateResult());
   }
 });
 
