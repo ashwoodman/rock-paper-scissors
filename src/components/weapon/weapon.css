@@ -4,7 +4,7 @@
 
 .weapon__image {
   width: 80%;
-  max-width: 200px;
+  max-width: 160px;
 }
 
 @keyframes bounce {
@@ -22,4 +22,10 @@
 .weapon__image--animate {
   text-align: left;
   animation: bounce 0.7s ease-in-out infinite;
+}
+
+@media (max-height: 800px) {
+  .weapon__image {
+    max-width: 80px;
+  }
 }

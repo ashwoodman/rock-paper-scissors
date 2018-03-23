@@ -10,9 +10,8 @@ Created using React and Redux.
 
 ## Live Demo
 
-https://build-czwyumrhzn.now.sh/
+https://build-jidxxfvwwj.now.sh/
 
 ## Known Issues
 
 - Countdown hand animation sometimes freezes on Safari
-- Weapon menu items off screen for small wide screens
